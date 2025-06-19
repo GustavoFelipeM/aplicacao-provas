@@ -1,5 +1,3 @@
-package Classesbasicas;
-
 public class Produtor
 {
     private String nome;
@@ -17,6 +15,7 @@ public class Produtor
         this.categoria = categoria;
     }
 
+    // getters and setters
     public String getNome()
     {
         return nome;
