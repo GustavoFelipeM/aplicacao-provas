@@ -3,22 +3,24 @@ package Classesbasicas;
 import java.util.ArrayList;
 
 public class Participacao {
-    private ArrayList<Produtor> produtores;
+    private Produtor produtor;
     private EdicaoFeira edicaoFeira;
     private int banca;
 
-    public Participacao
+    public Participacao(Produtor produtor, EdicaoFeira edicaoFeira, int banca)
     {
-        this.produtores = new ArrayList<>();
+        this.produtor = produtor;
+        this.edicaoFeira = edicaoFeira;
+        this.banca = banca;
     }
 
     public Produtor getProdutores()
     {
-        return ArrayList<Produtor>;
+        return produtor;
     }
     public void setProdutor(Produtor produtor)
     {
-        this.produtores = produtor;
+        this.produtor= produtor;
     }
 
     public EdicaoFeira getEdicaoFeira()
