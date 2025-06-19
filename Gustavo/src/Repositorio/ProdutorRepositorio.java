@@ -1,3 +1,6 @@
+package Repositorio;
+
+import Classesbasicas.*;
 import java.util.ArrayList;
 
 public class ProdutorRepositorio
