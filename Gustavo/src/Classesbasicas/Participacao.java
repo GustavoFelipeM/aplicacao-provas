@@ -1,3 +1,5 @@
+package Classesbasicas;
+
 public class Participacao {
     private Produtor produtor;
     private EdicaoFeira edicaoFeira;
