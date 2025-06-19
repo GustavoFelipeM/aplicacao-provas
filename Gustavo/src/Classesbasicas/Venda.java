@@ -1,3 +1,5 @@
+package Classesbasicas;
+
 public class Venda {
     private Produtor produtor;
     private Produto produto;

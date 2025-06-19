@@ -1,3 +1,7 @@
+package Classesbasicas;
+
+import java.util.Collection;
+
 public class Produtor
 {
     private String nome;
@@ -84,6 +88,11 @@ public class Produtor
 
     }
 
+    public Collection<Object> getCategoriasPermitidas() {
+    }
+
+    public void adicionarProduto(Produto produto) {
+    }
 }
 
 
