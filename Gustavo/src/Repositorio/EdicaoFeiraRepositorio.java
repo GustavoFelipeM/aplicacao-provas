@@ -1,5 +1,6 @@
 package Repositorio;
 
+import Classesbasicas.*;
 import java.util.ArrayList;
 
 public class EdicaoFeiraRepositorio
@@ -19,5 +20,6 @@ public class EdicaoFeiraRepositorio
                 }
             }
         }
+        return resultado;
     }
 }
