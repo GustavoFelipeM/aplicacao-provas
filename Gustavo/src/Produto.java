@@ -44,11 +44,4 @@ public class Produto {
     {
         this.produtor = produtor;
     }
-
-
-
-    public Produtor produtorAssociado(Produtor produtor)
-    {
-
-    }
 }
