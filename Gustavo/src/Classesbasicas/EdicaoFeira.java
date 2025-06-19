@@ -51,7 +51,8 @@ public class EdicaoFeira {
         this.numeroMaximoBancas = numeroMaximoBancas;
     }
 
-    public int controleDeBancas(){
+    public int controleDeBancas()
+    {
         return 0;
     }
     public boolean impedirInscricaoNoLimite(){
