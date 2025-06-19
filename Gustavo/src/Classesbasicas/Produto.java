@@ -1,5 +1,3 @@
-package Classesbasicas;
-
 public class Produto {
     private String nome;
     private String descricao;
@@ -14,6 +12,7 @@ public class Produto {
         this.produtor = produtor;
     }
 
+    // getters and setters
     public String getNome()
     {
         return nome;
@@ -42,8 +41,7 @@ public class Produto {
     {
         return produtor;
     }
-    public void setProdutor(Produtor produtor)
-    {
+    public void setProdutor(Produtor produtor) {
         this.produtor = produtor;
     }
 }
