@@ -1,77 +1,81 @@
 package Classesbasicas;
 
+import java.util.ArrayList;
+
 public class Venda {
     private Produtor produtor;
-    private Produto produto;
+    private ArrayList<ItemVenda> produtos;
     private EdicaoFeira edicaoFeira;
-    private int quantidade;
-    private double valorTotal;
+    private double vendaTotal;
     private String observacoes;
 
-    public Venda(Produtor produtor, Produto produto, EdicaoFeira edicaoFeira, int quantidade, double valorTotal, String observacoes){
+    public Venda(Produtor produtor, EdicaoFeira edicaoFeira, String observacoes)
+    {
         this.produtor=produtor;
-        this.produto=produto;
         this.edicaoFeira=edicaoFeira;
-        this.quantidade=quantidade;
-        this.valorTotal=valorTotal;
         this.observacoes=observacoes;
+        this.produtos=new ArrayList<>();
     }
-    public double totalVendidoPorBanca(){
-        return 0;
-    }
-    public void registrarFormaPagamento(){
 
+    public void adicionarItemVenda(ItemVenda itemVenda)
+    {
+        this.produtos.add(itemVenda);
     }
-    public void aplicarPromocao(){
 
+    public void calcularvendaTotal()
+    {
+        double vendaTotal = 0; //Variável local, diferente da variável da classe que seria this.vendaTotal
+        for (ItemVenda itemVenda : produtos)
+        {
+            vendaTotal = vendaTotal + itemVenda.getValorTotal();
+        }
+       setVendaTotal(vendaTotal);
     }
 
     // getters and setters
-    public Produtor getProdutor() {
+    public Produtor getProdutor()
+    {
         return produtor;
     }
 
-    public void setProdutor(Produtor produtor) {
+    public void setProdutor(Produtor produtor)
+    {
         this.produtor = produtor;
     }
 
-    public Produto getProduto() {
-        return produto;
+    public ArrayList<ItemVenda> getProdutos()
+    {
+        return produtos;
     }
 
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public EdicaoFeira getEdicaoFeira() {
+    public EdicaoFeira getEdicaoFeira()
+    {
         return edicaoFeira;
     }
 
-    public void setEdicaoFeira(EdicaoFeira edicaoFeira) {
+    public void setEdicaoFeira(EdicaoFeira edicaoFeira)
+    {
         this.edicaoFeira = edicaoFeira;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public double getVendaTotal()
+    {
+        return vendaTotal;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setVendaTotal(double vendaTotal)
+    {
+        this.vendaTotal = vendaTotal;
     }
 
-    public double getValorTotal() {
-        return valorTotal;
-    }
-
-    public void setValorTotal(double valorTotal) {
-        this.valorTotal = valorTotal;
-    }
-
-    public String getObservacoes() {
+    public String getObservacoes()
+    {
         return observacoes;
     }
 
-    public void setObservacoes(String observacoes) {
+    public void setObservacoes(String observacoes)
+    {
         this.observacoes = observacoes;
     }
+
 }
