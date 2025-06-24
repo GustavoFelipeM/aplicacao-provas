@@ -48,4 +48,13 @@ public class Produto
     public void setProdutor(Produtor produtor) {
         this.produtor = produtor;
     }
+
+    public double getPreco()
+    {
+        return preco;
+    }
+    public void setPreco(double preco)
+    {
+        this.preco = preco;
+    }
 }

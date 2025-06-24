@@ -4,15 +4,13 @@ public class ItemVenda
 {
     Produto produto;
     int quantidade;
-    double valor;
     double valorTotal;
 
-    public ItemVenda(Produto produto, int quantidade, double valor)
+    public ItemVenda(Produto produto, int quantidade)
     {
         this.produto = produto;
         this.quantidade = quantidade;
-        this.valor = valor;
-        this.valorTotal = valor*quantidade;
+        this.valorTotal = produto.getPreco()*quantidade;
     }
 
     public Produto getProduto()
@@ -31,15 +29,6 @@ public class ItemVenda
     public void setQuantidade(int quantidade)
     {
         this.quantidade = quantidade;
-    }
-
-    public double getValor()
-    {
-        return valor;
-    }
-    public void setValor(double valor)
-    {
-        this.valor = valor;
     }
 
     public double getValorTotal()
