@@ -1,12 +1,14 @@
 package Classesbasicas;
 
-public class Produto {
+public class Produto
+{
     private String nome;
     private String descricao;
     private String categoria;
     private Produtor produtor;
+    private double preco;
 
-    public Produto(String nome, String descricao, String categoria, Produtor produtor)
+    public Produto(String nome, String descricao, String categoria, Produtor produtor, double preço)
     {
         this.nome = nome;
         this.descricao = descricao;

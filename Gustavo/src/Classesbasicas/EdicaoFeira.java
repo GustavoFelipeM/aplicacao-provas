@@ -9,7 +9,17 @@ public class EdicaoFeira {
     private String descricao;
     private int numeroMaximoBancas;
 
-    // getters and setters
+
+
+    public EdicaoFeira(LocalDateTime data,  LocalDateTime horario, String local, String descricao, int numeroMaximoBancas)
+    {
+        this.data = data;
+        this.horario = horario;
+        this.local = local;
+        this.descricao = descricao;
+        this.numeroMaximoBancas = numeroMaximoBancas;
+    }
+
     public LocalDateTime getData()
     {
         return data;

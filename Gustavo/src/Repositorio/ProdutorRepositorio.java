@@ -1,39 +1,62 @@
 package Repositorio;
 
 import Classesbasicas.*;
+import Repositorio.Abstrato.RepositorioPadrao;
+
 import java.util.ArrayList;
 
-public class ProdutorRepositorio
+public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
 {
-    private ArrayList<Produtor> produtores;
-    public ProdutorRepositorio (int capacidadeInicial)
+    //Atributos já herdados do repositorio padrão
+    private int maxbancas;
+
+    public ProdutorRepositorio(EdicaoFeira edicao)
     {
-        this.produtores = new ArrayList<>(capacidadeInicial);
+        super();
+        this.maxbancas = edicao.getNumeroMaximoBancas();
+        this.lista = new ArrayList<>(maxbancas);
     }
 
-    public boolean AddProdutor(Produtor p)
-    {
-        boolean resultado = false;
-        if (p != null)
-        {
-            String cpfCnpj = p.getCpfCnpj();
-            boolean existeprodutor = false;
 
-            for(Produtor i : produtores)
+    @Override
+    public boolean Existe(Produtor obj)
+    {
+        boolean existe = false;
+        if(obj != null)
+        {
+            String CpfCnpj = obj.getCpfCnpj();
             {
-                if (i.getCpfCnpj().equals(cpfCnpj))
+                for (Produtor i : lista)
                 {
-                    existeprodutor = true;
-                    break;
+                    if (i.getCpfCnpj().equals(CpfCnpj))
+                    {
+                        existe = true;
+                        break;
+                    }
                 }
             }
+        }
+        return existe;
+    }
 
-            if (!existeprodutor)
+    @Override
+    public void Add(Produtor obj)
+    {
+        if(lista.size() < maxbancas)
+        {
+            if (!Existe(obj))
             {
-                this.produtores.add(p);
-                resultado = true;
+                lista.add(obj);
             }
         }
-        return resultado;
+        else
+        {
+            System.out.println("Limite de " + maxbancas + " bancas atingido. Não é possível adicionar o produtor.");
+
+        }
     }
+
+
+
+
 }
