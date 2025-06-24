@@ -10,7 +10,6 @@ public class ItemVenda
     {
         this.produto = produto;
         this.quantidade = quantidade;
-        this.valorTotal = produto.getPreco()*quantidade;
     }
 
     public Produto getProduto()
@@ -33,7 +32,7 @@ public class ItemVenda
 
     public double getValorTotal()
     {
-        return valorTotal;
+        return produto.getPreco() * quantidade;
     }
 
 }

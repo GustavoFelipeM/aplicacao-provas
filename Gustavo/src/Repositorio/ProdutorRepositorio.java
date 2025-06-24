@@ -40,7 +40,7 @@ public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
     }
 
     @Override
-    public void Add(Produtor obj)
+    public void add(Produtor obj)
     {
         if(lista.size() < maxbancas)
         {

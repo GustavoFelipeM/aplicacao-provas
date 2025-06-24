@@ -27,7 +27,7 @@ public abstract class RepositorioPadrao<ClasseBasica>
         return existe;
     }
 
-    public void Add(ClasseBasica obj)
+    public void add(ClasseBasica obj)
     {
         if (!Existe(obj))
         {
@@ -35,7 +35,7 @@ public abstract class RepositorioPadrao<ClasseBasica>
         }
     }
 
-    public void Remove(ClasseBasica obj)
+    public void remove(ClasseBasica obj)
     {
         if (Existe(obj))
         {
