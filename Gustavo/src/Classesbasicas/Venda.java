@@ -24,7 +24,7 @@ public class Venda {
 
     public void calcularvendaTotal()
     {
-        double vendaTotal = 0; //Variável local, diferente da variável da classe que seria this.vendaTotal
+        double vendaTotal = 0; //Variável local, diferente da variável do objeto que seria this.vendaTotal
         for (ItemVenda itemVenda : produtos)
         {
             vendaTotal = vendaTotal + itemVenda.getValorTotal();
