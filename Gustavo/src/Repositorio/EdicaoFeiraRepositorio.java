@@ -1,11 +1,13 @@
 package Repositorio;
 
 import Classesbasicas.*;
+import Repositorio.Abstrato.RepositorioPadrao;
+
 import java.util.ArrayList;
 
-public class EdicaoFeiraRepositorio
+public class EdicaoFeiraRepositorio extends RepositorioPadrao<EdicaoFeira>
 {
-    private ArrayList<EdicaoFeira> edicoes;
+
 
     public boolean addEdicao(EdicaoFeira ef)
     {

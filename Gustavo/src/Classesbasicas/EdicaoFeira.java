@@ -11,6 +11,7 @@ public class EdicaoFeira {
 
 
 
+
     public EdicaoFeira(LocalDateTime data,  LocalDateTime horario, String local, String descricao, int numeroMaximoBancas)
     {
         this.data = data;
