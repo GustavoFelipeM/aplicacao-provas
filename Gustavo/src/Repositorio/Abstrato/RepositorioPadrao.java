@@ -10,7 +10,7 @@ public abstract class RepositorioPadrao<ClasseBasica>
         this.lista = new ArrayList<>();
     }
 
-    public boolean Existe(ClasseBasica obj)
+    public boolean existe(ClasseBasica obj)
     {
         boolean existe = false;
         if (obj != null)
@@ -29,7 +29,7 @@ public abstract class RepositorioPadrao<ClasseBasica>
 
     public void add(ClasseBasica obj)
     {
-        if (!Existe(obj))
+        if (!existe(obj))
         {
             lista.add(obj);
         }
@@ -37,15 +37,15 @@ public abstract class RepositorioPadrao<ClasseBasica>
 
     public void remove(ClasseBasica obj)
     {
-        if (Existe(obj))
+        if (existe(obj))
         {
             lista.remove(obj);
         }
     }
 
-    public void Procurar(ClasseBasica obj)
+    public void procurar(ClasseBasica obj)
     {
-       if (Existe(obj))
+       if (existe(obj))
        {
 
        }

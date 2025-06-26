@@ -19,7 +19,7 @@ public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
 
 
     @Override
-    public boolean Existe(Produtor obj)
+    public boolean existe(Produtor obj)
     {
         boolean existe = false;
         if(obj != null)
@@ -44,7 +44,7 @@ public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
     {
         if(lista.size() < maxbancas)
         {
-            if (!Existe(obj))
+            if (!existe(obj))
             {
                 lista.add(obj);
             }

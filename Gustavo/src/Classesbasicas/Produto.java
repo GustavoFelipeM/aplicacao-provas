@@ -5,18 +5,17 @@ public class Produto
     private String nome;
     private String descricao;
     private String categoria;
-    private Produtor produtor;
     private double preco;
 
-    public Produto(String nome, String descricao, String categoria, Produtor produtor, double preço)
+    public Produto(String nome, String descricao, String categoria, double preço)
     {
         this.nome = nome;
         this.descricao = descricao;
         this.categoria = categoria;
-        this.produtor = produtor;
+        this.preco = preco;
     }
 
-    // getters and setters
+
     public String getNome()
     {
         return nome;
@@ -25,6 +24,7 @@ public class Produto
     {
         this.nome = nome;
     }
+
     public String getDescricao()
     {
         return descricao;
@@ -33,6 +33,7 @@ public class Produto
     {
         this.descricao = descricao;
     }
+
     public String getCategoria()
     {
         return categoria;
@@ -40,13 +41,6 @@ public class Produto
     public void setCategoria(String categoria)
     {
         this.categoria = categoria;
-    }
-    public Produtor getProdutor()
-    {
-        return produtor;
-    }
-    public void setProdutor(Produtor produtor) {
-        this.produtor = produtor;
     }
 
     public double getPreco()
