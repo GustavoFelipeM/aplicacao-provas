@@ -24,7 +24,7 @@ public class ProdutoRepositorio extends RepositorioPadrao<Produto>
             }
             else
             {
-                System.out.println("Produto não tem a mesma categoria");
+                //TODO Colocar exception
             }
 
         }

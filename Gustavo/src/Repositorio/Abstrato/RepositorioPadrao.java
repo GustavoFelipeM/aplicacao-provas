@@ -1,5 +1,7 @@
 package Repositorio.Abstrato;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class RepositorioPadrao<ClasseBasica>
 {
@@ -43,11 +45,39 @@ public abstract class RepositorioPadrao<ClasseBasica>
         }
     }
 
-    public void procurar(ClasseBasica obj)
+    public ClasseBasica procurar(ClasseBasica obj)
     {
+        ClasseBasica resultado = null;
+        int i = this.procurarIndice(obj);
+        if (i >= 0)
+        {
+            resultado = lista.get(i);
+        }
+        return resultado;
+    }
+
+    public int procurarIndice(ClasseBasica obj)
+    {
+       int indice = -1;
        if (existe(obj))
        {
-
+            for (int i=0; i<lista.size(); i++)
+            {
+                if (lista.get(i).equals(obj))
+                {
+                    indice = i;
+                }
+            }
        }
+       return indice;
     }
+
+
+
+    public List<ClasseBasica> recuperarTudo()
+    {
+        return Collections.unmodifiableList(this.lista);
+    }
+
+
 }
