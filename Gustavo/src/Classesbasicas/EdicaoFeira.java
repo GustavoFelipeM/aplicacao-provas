@@ -8,7 +8,7 @@ public class EdicaoFeira {
     private String local;
     private String descricao;
     private int numeroMaximoBancas;
-
+    private Participacao[] participacoes;
 
 
 
@@ -19,6 +19,7 @@ public class EdicaoFeira {
         this.local = local;
         this.descricao = descricao;
         this.numeroMaximoBancas = numeroMaximoBancas;
+        this.participacoes = new Participacao[numeroMaximoBancas];
     }
 
     public LocalDateTime getData()

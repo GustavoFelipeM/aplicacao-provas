@@ -6,13 +6,15 @@ public class Produto
     private String descricao;
     private String categoria;
     private double preco;
+    private Produtor produtorAssociado;
 
-    public Produto(String nome, String descricao, String categoria, double preço)
+    public Produto(String nome, String descricao, String categoria, double preço, Produtor produtorAssociado)
     {
         this.nome = nome;
         this.descricao = descricao;
         this.categoria = categoria;
         this.preco = preco;
+        this.produtorAssociado = produtorAssociado;
     }
 
 
@@ -50,5 +52,14 @@ public class Produto
     public void setPreco(double preco)
     {
         this.preco = preco;
+    }
+
+    public Produtor getProdutorAssociado()
+    {
+        return produtorAssociado;
+    }
+    public void setProdutorAssociado(Produtor produtorAssociado)
+    {
+        this.produtorAssociado = produtorAssociado;
     }
 }

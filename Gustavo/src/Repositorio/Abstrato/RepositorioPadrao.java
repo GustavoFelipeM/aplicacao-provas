@@ -45,39 +45,13 @@ public abstract class RepositorioPadrao<ClasseBasica>
         }
     }
 
-    public ClasseBasica procurar(ClasseBasica obj)
-    {
-        ClasseBasica resultado = null;
-        int i = this.procurarIndice(obj);
-        if (i >= 0)
-        {
-            resultado = lista.get(i);
-        }
-        return resultado;
-    }
-
-    public int procurarIndice(ClasseBasica obj)
-    {
-       int indice = -1;
-       if (existe(obj))
-       {
-            for (int i=0; i<lista.size(); i++)
-            {
-                if (lista.get(i).equals(obj))
-                {
-                    indice = i;
-                }
-            }
-       }
-       return indice;
-    }
-
-
-
     public List<ClasseBasica> recuperarTudo()
     {
         return Collections.unmodifiableList(this.lista);
     }
 
+   public abstract List<ClasseBasica> procurarPorNome(String nome);
+
 
 }
+
