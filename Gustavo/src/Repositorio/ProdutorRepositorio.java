@@ -2,22 +2,14 @@ package Repositorio;
 
 import Classesbasicas.*;
 import Repositorio.Abstrato.RepositorioPadrao;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 import java.util.ArrayList;
 
 public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
 {
-    //Atributos já herdados do repositorio padrão
-    private int maxbancas;
-
-    public ProdutorRepositorio(EdicaoFeira edicao)
-    {
-        super();
-        this.maxbancas = edicao.getNumeroMaximoBancas();
-        this.lista = new ArrayList<>(maxbancas);
-    }
-
-
     @Override
     public boolean existe(Produtor obj)
     {
@@ -42,19 +34,44 @@ public class ProdutorRepositorio extends RepositorioPadrao<Produtor>
     @Override
     public void add(Produtor obj)
     {
-        if(lista.size() < maxbancas)
+        if (!existe(obj))
         {
-            if (!existe(obj))
-            {
-                lista.add(obj);
-            }
+            lista.add(obj);
         }
+
         else
         {
-            System.out.println("Limite de " + maxbancas + " bancas atingido. Não é possível adicionar o produtor.");
+            //TODO Criar exception caso o produtor já esteja cadastrado;
 
         }
     }
+
+    @Override
+    public List<Produtor> procurarPorNome(String nome)
+    {
+        List<Produtor> listaDeProdutores = new ArrayList<>();
+        for (Produtor i : lista)
+        {
+            if (i.getNome().equalsIgnoreCase(nome))
+            {
+                listaDeProdutores.add(i);
+            }
+        }
+        return listaDeProdutores;
+
+    }
+
+    public void procurarPorCpfCnpj(String cpfCnpj)
+    {
+        procurarPorNome(cpfCnpj);
+    }
+
+    public void procurarPorCategoria(String categoria)
+    {
+        procurarPorNome(categoria);
+    }
+
+
 
 
 

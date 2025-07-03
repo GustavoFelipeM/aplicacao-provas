@@ -2,16 +2,25 @@ package Repositorio;
 
 import Classesbasicas.EdicaoFeira;
 import Classesbasicas.Participacao;
+import Classesbasicas.Produtor;
 import Repositorio.Abstrato.RepositorioPadrao;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class ParticipacaoRepositorio extends RepositorioPadrao<Participacao>
 {
-    private final EdicaoFeira edicao;
-
-    public ParticipacaoRepositorio(EdicaoFeira edicao)
+    @Override
+    public List<Participacao> procurarPorNome(String produtor.getCpfCnpj())
     {
-        super();
-        this.edicao = edicao;
+        List<Participacao> participacoes = new ArrayList<Participacao>();
+        {
+            for (Participacao p : lista)
+            {
+
+            }
+        }
     }
 
 }

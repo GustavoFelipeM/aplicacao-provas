@@ -7,7 +7,6 @@ public class EdicaoFeira {
     private LocalDateTime horario;
     private String local;
     private String descricao;
-    private int numeroMaximoBancas;
     private Participacao[] participacoes;
 
 
@@ -18,8 +17,7 @@ public class EdicaoFeira {
         this.horario = horario;
         this.local = local;
         this.descricao = descricao;
-        this.numeroMaximoBancas = numeroMaximoBancas;
-        this.participacoes = new Participacao[numeroMaximoBancas];
+                this.participacoes = new Participacao[numeroMaximoBancas];
     }
 
     public LocalDateTime getData()
@@ -54,24 +52,17 @@ public class EdicaoFeira {
     {
         this.descricao = descricao;
     }
-    public int getNumeroMaximoBancas()
-    {
-        return numeroMaximoBancas;
-    }
-    public void setNumeroMaximoBancas(int numeroMaximoBancas)
-    {
-        this.numeroMaximoBancas = numeroMaximoBancas;
-    }
+
 
    public boolean checarMaximoBancas()
     {
         int quantidade = 0;
         boolean estaCheio = false;
-        for (int i = 0; i<numeroMaximoBancas; i++)
+        for (int i = 0; i<participacoes.length; i++)
         {
             quantidade++;
         }
-        if (quantidade == numeroMaximoBancas)
+        if (quantidade == participacoes.length)
         {
             estaCheio = true;
         }
@@ -82,16 +73,20 @@ public class EdicaoFeira {
     {
         if (!checarMaximoBancas())
         {
-            for (int i=0; i<numeroMaximoBancas; i++)
+            for (int i=0; i<participacoes.length ; i++)
             {
                 if (participacoes[i] == null)
                 {
                     participacoes[i] = participacao;
+                    break;
                 }
             }
         }
 
-        else //TODO EXCEPTION
+        else
+         {
+            //TODO EXCEPTION
+        }
     }
 
 }

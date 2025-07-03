@@ -44,7 +44,7 @@ public class ProdutoRepositorio extends RepositorioPadrao<Produto>
 
     public List<Produto> procurarProdutor(Produtor produtor)
     {
-        //Tava pensando em colocar um if existe(produtor) *Método do repositorio produtor* mas acho que vai fazer um repositorio depender do outro, perguntar ao professor
+        if
         List<Produto> produtosDoProdutor = new ArrayList<>();
         for (Produto p: lista)
         {

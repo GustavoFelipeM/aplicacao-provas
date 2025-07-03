@@ -2,26 +2,69 @@ package Repositorio;
 
 import Classesbasicas.*;
 import Repositorio.Abstrato.RepositorioPadrao;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class EdicaoFeiraRepositorio extends RepositorioPadrao<EdicaoFeira>
 {
 
-
-    public boolean addEdicao(EdicaoFeira ef)
+    @Override
+    public boolean existe(EdicaoFeira edicaoFeira)
     {
-        boolean resultado = false;
-        boolean limitemaxatingido =  false;
+        boolean existe = false;
+        if (edicaoFeira != null)
         {
-            if (ef != null)
+            LocalDateTime data = edicaoFeira.getData();
+            LocalDateTime horario = edicaoFeira.getHorario();
+            String local = edicaoFeira.getLocal();
+            for (EdicaoFeira ef : lista)
             {
-                int limitemax = ef.getNumeroMaximoBancas();
+                if (ef.getData().equals(data) && ef.getHorario().equals(horario) && ef.getLocal().equals(local))
                 {
-
+                    existe = true;
                 }
             }
         }
-        return resultado;
+        return existe;
     }
+
+    @Override
+    public List<EdicaoFeira> procurarPorNome(String local)
+    {
+        List<EdicaoFeira> listaDeEdicoes = new ArrayList<>();
+
+        for (EdicaoFeira ef : lista)
+        {
+            if (ef.getLocal().equals(local))
+            {
+                listaDeEdicoes.add(ef);
+            }
+        }
+        return listaDeEdicoes;
+    }
+
+    public List<EdicaoFeira> procurarPorData (LocalDateTime data)
+    {
+        List<EdicaoFeira> listaDeEdicoes = new ArrayList<>();
+
+        for (EdicaoFeira ef : lista)
+        {
+            if (ef.getData().equals(data))
+            {
+                listaDeEdicoes.add(ef);
+            }
+        }
+        return listaDeEdicoes;
+    }
+
+    public void procurarPorHorario (LocalDateTime horario)
+    {
+        procurarPorData (horario);
+    }
+
+
 }

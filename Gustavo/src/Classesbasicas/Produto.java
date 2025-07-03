@@ -10,11 +10,14 @@ public class Produto
 
     public Produto(String nome, String descricao, String categoria, double preço, Produtor produtorAssociado)
     {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.categoria = categoria;
-        this.preco = preco;
-        this.produtorAssociado = produtorAssociado;
+
+        {
+            this.nome = nome;
+            this.descricao = descricao;
+            this.categoria = categoria;
+            this.preco = preco;
+            this.setProdutorAssociado(produtorAssociado);
+        }
     }
 
 
@@ -40,10 +43,6 @@ public class Produto
     {
         return categoria;
     }
-    public void setCategoria(String categoria)
-    {
-        this.categoria = categoria;
-    }
 
     public double getPreco()
     {
@@ -60,6 +59,13 @@ public class Produto
     }
     public void setProdutorAssociado(Produtor produtorAssociado)
     {
-        this.produtorAssociado = produtorAssociado;
+        if (!(categoria != null && !categoria.isEmpty() && produtorAssociado != null && this.categoria.equalsIgnoreCase(produtorAssociado.getCategoria())))
+        {
+            // TODO throw new ProdutoInvalidoException;
+        }
+        else
+        {
+            this.produtorAssociado = produtorAssociado;
+        }
     }
 }
