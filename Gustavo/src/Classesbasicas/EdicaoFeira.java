@@ -63,11 +63,35 @@ public class EdicaoFeira {
         this.numeroMaximoBancas = numeroMaximoBancas;
     }
 
-    public int controleDeBancas()
+   public boolean checarMaximoBancas()
     {
-        return 0;
+        int quantidade = 0;
+        boolean estaCheio = false;
+        for (int i = 0; i<numeroMaximoBancas; i++)
+        {
+            quantidade++;
+        }
+        if (quantidade == numeroMaximoBancas)
+        {
+            estaCheio = true;
+        }
+        return estaCheio;
     }
-    public boolean impedirInscricaoNoLimite(){
-        return false;
+
+    public void addParticipacao(Participacao participacao)
+    {
+        if (!checarMaximoBancas())
+        {
+            for (int i=0; i<numeroMaximoBancas; i++)
+            {
+                if (participacoes[i] == null)
+                {
+                    participacoes[i] = participacao;
+                }
+            }
+        }
+
+        else //TODO EXCEPTION
     }
+
 }
