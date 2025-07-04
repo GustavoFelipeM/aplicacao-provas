@@ -5,6 +5,13 @@ public class Participacao {
     private EdicaoFeira edicaoFeira;
     private int banca;
 
+    Participacao(Produtor produtor, EdicaoFeira edicaoFeira)
+    {
+        this.produtor = produtor;
+        this.edicaoFeira = edicaoFeira;
+        this.banca = -1;
+    }
+
 
     public Produtor getProdutor()
     {
@@ -33,7 +40,14 @@ public class Participacao {
 
     public void setBanca(int banca)
     {
-        this.banca = banca;
+        if(this.banca == -1)
+        {
+            this.banca = banca;
+        }
+        else
+        {
+            //TODO throw new IllegalStateException("A banca já foi definida e não pode ser alterada.")
+        }
     }
 
     public void inscreverEmEdicaoFutura()

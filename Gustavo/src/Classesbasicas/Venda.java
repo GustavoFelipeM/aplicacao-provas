@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class Venda {
     private Produtor produtor;
-    private ItemVendaRepositorio itensVenda;
+    private ArrayList<ItemVenda> itensVenda;
     private EdicaoFeira edicaoFeira;
     private String observacoes;
 
@@ -15,7 +15,7 @@ public class Venda {
         this.produtor=produtor;
         this.edicaoFeira=edicaoFeira;
         this.observacoes=observacoes;
-        this.itensVenda=new ItemVendaRepositorio();
+        this.itensVenda= new ArrayList<>();
     }
 
     public void adicionarItemVenda(ItemVenda itemVenda)
@@ -52,9 +52,15 @@ public class Venda {
         this.edicaoFeira = edicaoFeira;
     }
 
-    public double getVendaTotal()
+    public double calcularVendaTotal()
     {
-        return itensVenda.calcularVendaTotal();
+        double vendaTotal = 0;
+        for (ItemVenda itemVenda : itensVenda)
+        {
+            vendaTotal += itemVenda.getValorTotal();
+        }
+        return vendaTotal;
+
     }
 
     public String getObservacoes()
@@ -65,6 +71,11 @@ public class Venda {
     public void setObservacoes(String observacoes)
     {
         this.observacoes = observacoes;
+    }
+
+    public ArrayList<ItemVenda> getItensVenda()
+    {
+        return itensVenda;
     }
 
 }

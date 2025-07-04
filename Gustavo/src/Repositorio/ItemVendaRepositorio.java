@@ -1,18 +1,26 @@
 package Repositorio;
 
 import Classesbasicas.ItemVenda;
+import Classesbasicas.Produto;
 import Repositorio.Abstrato.RepositorioPadrao;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemVendaRepositorio extends RepositorioPadrao<ItemVenda>
 {
 
-    public double calcularVendaTotal()
-    {
-        double vendaTotal = 0;
-        for (ItemVenda itemVenda : lista)
+   public List<ItemVenda> procurarPorProduto (Produto produto)
+   {
+        List<ItemVenda> itemVendas = new ArrayList<>();
+
+        for(ItemVenda iv : lista)
         {
-            vendaTotal += itemVenda.getValorTotal();
+            if (iv.getProduto().equals(produto))
+                {
+                itemVendas.add(iv);
+                }
         }
-        return vendaTotal;
-    }
+        return itemVendas;
+   }
 }

@@ -50,7 +50,7 @@ public abstract class RepositorioPadrao<ClasseBasica>
         return Collections.unmodifiableList(this.lista);
     }
 
-   public abstract List<ClasseBasica> procurarPorNome(String nome);
+
 
 
 }

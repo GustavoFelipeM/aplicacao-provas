@@ -17,7 +17,7 @@ public class EdicaoFeira {
         this.horario = horario;
         this.local = local;
         this.descricao = descricao;
-                this.participacoes = new Participacao[numeroMaximoBancas];
+        this.participacoes = new Participacao[numeroMaximoBancas];
     }
 
     public LocalDateTime getData()
@@ -71,6 +71,7 @@ public class EdicaoFeira {
 
     public void addParticipacao(Participacao participacao)
     {
+
         if (!checarMaximoBancas())
         {
             for (int i=0; i<participacoes.length ; i++)
@@ -78,7 +79,10 @@ public class EdicaoFeira {
                 if (participacoes[i] == null)
                 {
                     participacoes[i] = participacao;
+                    participacao.setBanca(i);
                     break;
+
+
                 }
             }
         }

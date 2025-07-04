@@ -32,8 +32,8 @@ public class EdicaoFeiraRepositorio extends RepositorioPadrao<EdicaoFeira>
         return existe;
     }
 
-    @Override
-    public List<EdicaoFeira> procurarPorNome(String local)
+
+    public List<EdicaoFeira> procurarPorLocal(String local)
     {
         List<EdicaoFeira> listaDeEdicoes = new ArrayList<>();
 
@@ -61,9 +61,18 @@ public class EdicaoFeiraRepositorio extends RepositorioPadrao<EdicaoFeira>
         return listaDeEdicoes;
     }
 
-    public void procurarPorHorario (LocalDateTime horario)
+    public List<EdicaoFeira> procurarPorHorario (LocalDateTime horario)
     {
-        procurarPorData (horario);
+        List<EdicaoFeira> listaDeEdicoes = new ArrayList<>();
+
+        for (EdicaoFeira ef : lista)
+        {
+            if (ef.getData().equals(horario))
+            {
+                listaDeEdicoes.add(ef);
+            }
+        }
+        return listaDeEdicoes;
     }
 
 
